@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="assets/icomoon/style.css">
+  <style>
+    /*http://paletton.com/#uid=10a0u0kll6wbdqvedb5tb2HWp03*/
+    body {
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans SC', sans-serif;
+      font-weight: 800;
+      text-shadow: 0 1px 1px #eee; /* letterpress */
+      color: #341811;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      margin: 0;
+      padding: 0;
+      text-align: center;
+
+      background-color: #D39889;
+      background-image: url(assets/01-whitepaper.png);
+      width: 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 5px 16px;
+      outline: none;
+      border: 1px solid #91b36c;
+
+      font-family: 'Alegreya Sans SC', sans-serif;
+      font-size: 24px;
+      cursor: pointer;
+      background: #D39889;
+    }
+    button .icon {
+      font-size: 14px;
+      padding-left: 10px;
+    }
+
+    .title {
+      border-color: rgb(76, 25, 11);
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      margin: 10px 0;
+    }
+
+    .title h2 {
+      display: inline-block;
+      margin: -2px 0;
+      padding: 15px 0;
+      width: 1000px;
+      background: rgba(211, 152, 137, 0.2);
+    }
+
+    .sessions .add-event {
+      width: 800px;
+      text-align: left;
+      margin: auto;
+    }
+    .sessions .add-event label {
+      display: block;
+      font-size: 14px;
+    }
+    .sessions .add-event input, .sessions .add-event textarea {
+      width: 100%;
+      padding: 5px 10px;
+      font-family: 'Alegreya Sans SC', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    .sessions .add-event textarea {
+      min-height: 150px;
+    }
+    .sessions .add-event button {
+      background-color: #85da75;
+    }
+    .sessions .add-event .add-event-btn {
+      margin: 20px 0;
+    }
+    .sessions .add-event .add-event-form {
+      position: relative;
+    }
+    .sessions .add-event .close-add-event-form {
+      position: absolute;
+      right: 0;
+      top: -15px;
+      cursor: pointer;
+    }
+
+
+    .auditions table {
+      width: 800px;
+      margin: auto;
+    }
+    .auditions table a {
+      text-decoration: none;
+    }
+    .auditions table a.icon {
+      color: currentColor;
+    }
+    .auditions table th {
+      border-bottom: 6px solid rgba(76, 25, 11, 0.41);
+    }
+    .auditions table td.name {
+      font-weight: 900;
+    }
+    .auditions table td.logo img {
+      height: 60px;
+      mix-blend-mode: multiply;
+    }
+
+    footer, header {
+      width: 100%;
+      background-color: #341811;
+    }
+    header h1 {
+      color: #d6d6d6;
+      text-shadow: 0 1px 1px #484848;
+      margin: 10px;
+      font-size: 36px;
+    }
+    footer {
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>SoundSystemCulture.PL</h1>
+  </header>
+
+
+  <section class="sessions">
+    <div class="title">
+      <h2>Nadchodzące Sesje</h2>
+    </div>
+    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23c0c0c0&amp;src=0bcsclkqnp2a84r6846sr2a7bs%40group.calendar.google.com&amp;color=%23853104&amp;ctz=Europe%2FWarsaw" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+    <div class="add-event">
+      <button class="add-event-btn">
+        dodaj wydarzenie
+        <span class="icon icon-plus"></span>
+      </button>
+      <form class="add-event-form" style="display: none;">
+        <span class="icon icon-cross close-add-event-form"></span>
+        <div>
+          <label>Nazwa wydarzenia:</label>
+          <input type="text" name="eventName">
+        </div>
+        <div>
+          <label>Adres:</label>
+          <input type="text" name="eventAddress">
+        </div>
+        <div>
+          <label>Link do wydarzenia na Facebooku:</label>
+          <input type="text" name="eventFacebook">
+        </div>
+        <div>
+          <label>Opis:</label>
+          <textarea name="eventDescription"></textarea>
+        </div>
+        <div>
+          <button type="submit">Dodaj</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="auditions">
+    <div class="title">
+      <h2>Audycje Radiowe</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">audycja</th>
+          <th>kiedy</th>
+          <th>słuchaj online</th>
+          <th>linki</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="logo">
+            <img src="assets/logo_positivethursdays.jpg">
+          </td>
+          <td class="name">Positive Thursdays</td>
+          <td>każdy czwartek</td>
+          <td>
+            <a href="https://www.mixcloud.com/Positive_Thursdays/" target="_blank">
+              Mixcloud.com/Positive_Thursdays
+            </a>
+          </td>
+          <td>
+            <a href="https://www.facebook.com/PositiveThursdays/" class="icon icon-facebook"></a>
+          </td>
+        </tr>
+        <tr>
+          <td class="logo">
+            <img src="assets/logo_afriko.jpg">
+          </td>
+          <td class="name">Afriko</td>
+          <td>Każdy czwartek</td>
+          <td>
+            <a href="http://artradio.pl/" target="_blank">
+              ArtRadio.pl
+            </a>
+          </td>
+          <td>
+            <a href="https://www.facebook.com/afrikoartradio/" class="icon icon-facebook"></a>
+          </td>
+        </tr>
+        <tr>
+          <td class="logo">
+            <img src="assets/logo_bigupsession.jpg">
+          </td>
+          <td class="name">BigUpSession</td>
+          <td>live sesje od poniedziałku do piątku<br>we wtorki polscy selektorzy</td>
+          <td>
+            <a href="http://BigUpSession.com" target="_blank">
+              BigUpSession.com
+            </a>
+          </td>
+          <td>
+            <a href="https://www.facebook.com/BigUpSession/" class="icon icon-facebook"></a>
+            <a href="https://twitter.com/bigupsession" class="icon icon-twitter"></a>
+          </td>
+        </tr>
+        <tr>
+          <td class="logo">
+            <img src="assets/logo_strefadread.jpg">
+          </td>
+          <td class="name">Strefa Dread</td>
+          <td>Wtorek 20:00</td>
+          <td>
+            <a href="http://player.polskieradio.pl/" target="_blank">
+              polskieradio.pl
+            </a>
+          </td>
+          <td>
+            <a href="https://www.facebook.com/StrefaDread/" class="icon icon-facebook"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+
+  <footer>
+
+  <script>
+    var addEventForm = document.querySelector('.add-event-form');
+    document.querySelector('.add-event-btn').addEventListener('click', function() {
+      var formStyle = addEventForm.style;
+      formStyle.display = formStyle.display === 'none' ? 'block' : 'none';
+    });
+
+    document.querySelector('.close-add-event-form').addEventListener('click', function() {
+      addEventForm.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>
