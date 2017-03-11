@@ -26,9 +26,44 @@
       success: function() {
         $addEventForm.slideToggle();
         $form.find('input[type=text], textarea').val('');
+        modalsManager.open('.event-submit-success');
+      },
+      error: function() {
+        modalsManager.open('.submit-error');
       },
     });
 
     event.preventDefault();
   });
+
+  var modalsManager = window.modalsManager = (function() {
+    var $modalsContainer = $('.modals-container');
+    var $modals = $modalsContainer.find('.modal');
+    var api = {
+      open: function(modalSelector) {
+        $modals.hide();
+        $modalsContainer.css('display', 'flex').hide().fadeIn();
+        $modalsContainer.find(modalSelector).fadeIn();
+      },
+      close: function() {
+        $modals.fadeOut();
+        $modalsContainer.fadeOut();
+      },
+    };
+
+    // click on backdrop
+    $('.modals-container').on('click', function(event) {
+      var $target = $(event.target);
+      if (!$target.is('.modal') && !$target.parents('.modal').length) {
+        api.close();
+      }
+    });
+
+    $('.close-modal-icon').on('click', function() {
+      api.close();
+    });
+
+    return api;
+  } ());
+
 } (jQuery));

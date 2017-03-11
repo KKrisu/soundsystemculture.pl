@@ -45,7 +45,7 @@ button .icon {
 }
 
 .title {
-  border-color: rgb(76, 25, 11);
+  border-color: #4c190b;
   border-top: 1px solid;
   border-bottom: 1px solid;
   margin: 10px 0;
@@ -133,4 +133,45 @@ footer {
   height: 60px;
   font-weight: 500;
   line-height: 60px;
+}
+
+/* MODALS */
+
+.modals-container {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modals-container .modal {
+  display: none;
+
+  position: relative;
+  width: 750px;
+  max-width: 90vw;
+  margin: auto;
+  padding: 40px 20px;
+
+  border: 2px solid #4c190b;
+  background-color: #fff;
+  font-size: 24px;
+}
+
+.modals-container .modal.error {
+  color: #ff4646;
+}
+
+.modals-container .modal .close-modal-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #000;
 }

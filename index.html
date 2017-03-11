@@ -134,9 +134,56 @@
       </tbody>
     </table>
   </section>
+
   <footer>
     <a href="https://github.com/KKrisu/soundsystemculture.pl">GitHub</a>
   </footer>
+
+  <div class="modals-container">
+    <div class="modal error submit-error">
+      <span class="icon-cross close-modal-icon"></span>
+      Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie lub skontaktuj się z administratorem.
+    </div>
+
+    <div class="modal event-submit-success">
+      <span class="icon-cross close-modal-icon"></span>
+      Dzięki za dodanie wydarzenia!
+      <br>
+      Niebawem ktoś z moderatorów wrzuci go do kalendarza.
+      <br>
+      Bless!
+    </div>
+
+    <div class="modal contact-form">
+      <span class="icon-cross close-modal-icon"></span>
+      <form>
+        <div>
+          <label>Twój email:</label>
+          <input type="email" name="yourEmail" required>
+        </div>
+        <div>
+          <label>Twoje imię:</label>
+          <input type="text" name="yourName">
+        </div>
+        <div>
+          <label>Treść:</label>
+          <textarea name="body" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Dodaj</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal contact-submit-success">
+      <span class="icon-cross close-modal-icon"></span>
+      Dzięki za dodanie wydarzenia!
+      <br>
+      Niebawem ktoś z moderatorów wrzuci go do kalendarza.
+      <br>
+      Bless!
+    </div>
+  <div>
 
   <script src="assets/jquery-3.1.1.min.js"></script>
   <script src="assets/script.js"></script>
