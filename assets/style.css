@@ -37,11 +37,45 @@ button {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 24px;
   cursor: pointer;
-  background: #D39889;
+  background-color: #85da75;
+}
+button:disabled {
+  cursor: default;
 }
 button .icon {
   font-size: 14px;
   padding-left: 10px;
+}
+button .default-label {
+  display: inline;
+}
+button .loading-label {
+  display: none;
+}
+button:disabled .default-label {
+  display: none;
+}
+button:disabled .loading-label {
+  display: inline;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 5px 10px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+textarea {
+  min-height: 150px;
+}
+form label {
+  display: block;
+  font-size: 14px;
+  text-align: left;
+}
+form .required-asterisk {
+  color: #ff4646;
 }
 
 .title {
@@ -63,23 +97,6 @@ button .icon {
   width: 800px;
   text-align: left;
   margin: auto;
-}
-.sessions .add-event label {
-  display: block;
-  font-size: 14px;
-}
-.sessions .add-event input, .sessions .add-event textarea {
-  width: 100%;
-  padding: 5px 10px;
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-}
-.sessions .add-event textarea {
-  min-height: 150px;
-}
-.sessions .add-event button {
-  background-color: #85da75;
 }
 .sessions .add-event .add-event-btn {
   margin: 20px 0;
@@ -134,6 +151,9 @@ footer {
   font-weight: 500;
   line-height: 60px;
 }
+footer .divider {
+  margin: 0 5px;
+}
 
 /* MODALS */
 
@@ -174,4 +194,8 @@ footer {
   cursor: pointer;
   font-size: 18px;
   color: #000;
+}
+
+.modal.contact-form button {
+  margin-top: 20px;
 }

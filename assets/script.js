@@ -1,6 +1,9 @@
 (function($) {
   'use strict';
   var $addEventForm = $('.add-event-form');
+  var $addEventSubmitBtn = $addEventForm.find('button:submit');
+  var $contactForm = $('.contact-form form');
+  var $contactSubmitBtn = $contactForm.find('button:submit');
 
   $('.add-event-btn').on('click', function() {
     $addEventForm.slideToggle();
@@ -10,8 +13,9 @@
     $addEventForm.slideToggle();
   });
 
-  $('form.add-event-form').on('submit', function(event) {
+  $addEventForm.on('submit', function(event) {
     var $form = $(this);
+    $addEventSubmitBtn.prop('disabled', true);
 
     var data = $form.serializeArray().reduce(function(m, o) {
       m[o.name] = o.value;
@@ -27,13 +31,49 @@
         $addEventForm.slideToggle();
         $form.find('input[type=text], textarea').val('');
         modalsManager.open('.event-submit-success');
+        $addEventSubmitBtn.prop('disabled', false);
       },
       error: function() {
         modalsManager.open('.submit-error');
+        $addEventSubmitBtn.prop('disabled', false);
       },
     });
 
     event.preventDefault();
+  });
+
+  $contactForm.on('submit', function(event) {
+    var $form = $(this);
+    $contactSubmitBtn.prop('disabled', true);
+
+    var data = $form.serializeArray().reduce(function(m, o) {
+      m[o.name] = o.value;
+      return m;
+    }, {});
+
+    $.ajax({
+      url: 'https://formspree.io/soundsystemculturepl@gmail.com',
+      method: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function() {
+        $addEventForm.slideToggle();
+        $form.find('input[type=text], textarea').val('');
+        modalsManager.open('.contact-submit-success');
+        $contactSubmitBtn.prop('disabled', false);
+      },
+      error: function() {
+        modalsManager.open('.submit-error');
+        $contactSubmitBtn.prop('disabled', false);
+      },
+    });
+
+    event.preventDefault();
+  });
+
+  $('.open-modal').on('click', function() {
+    var modalSelector = $(this).attr('data-modal');
+    modalsManager.open(modalSelector);
   });
 
   var modalsManager = window.modalsManager = (function() {

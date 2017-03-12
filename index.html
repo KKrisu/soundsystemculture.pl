@@ -20,7 +20,7 @@
     <div class="title">
       <h2>Nadchodzące Sesje</h2>
     </div>
-    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23c0c0c0&amp;src=0bcsclkqnp2a84r6846sr2a7bs%40group.calendar.google.com&amp;color=%23853104&amp;ctz=Europe%2FWarsaw" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23c0c0c0&amp;src=0bcsclkqnp2a84r6846sr2a7bs%40group.calendar.google.com&amp;color=%23853104&amp;ctz=Europe%2FWarsaw" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
     <div class="add-event">
       <button class="add-event-btn">
@@ -30,27 +30,35 @@
       <form class="add-event-form" style="display: none;">
         <span class="icon icon-cross close-add-event-form"></span>
         <div>
-          <label>Nazwa wydarzenia:</label>
+          <label>Nazwa wydarzenia:<span class="required-asterisk">*</span></label>
           <input type="text" name="eventName" required>
         </div>
         <div>
-          <label>Adres:</label>
+          <label>Adres:<span class="required-asterisk">*</span></label>
           <input type="text" name="eventAddress" required>
+        </div>
+        <div>
+        <div>
+          <label>Data:<span class="required-asterisk">*</span></label>
+          <input type="text" name="eventDate" required>
         </div>
         <div>
           <label>Link do wydarzenia na Facebooku:</label>
           <input type="text" name="eventFacebook">
         </div>
         <div>
-          <label>Opis:</label>
+          <label>Opis:<span class="required-asterisk">*</span></label>
           <textarea name="eventDescription" required></textarea>
         </div>
         <div>
-          <label>Twój email:</label>
-          <input type="email" name="yourEmail" required>
+          <label>Twój email:<span class="required-asterisk">*</span></label>
+          <input type="email" name="mail" required>
         </div>
         <div>
-          <button type="submit">Dodaj</button>
+          <button type="submit">
+            <span class="default-label">Dodaj</span>
+            <span class="loading-label">wysyłanie...</span>
+          </button>
         </div>
       </form>
     </div>
@@ -82,7 +90,7 @@
             </a>
           </td>
           <td>
-            <a href="https://www.facebook.com/PositiveThursdays/" class="icon icon-facebook"></a>
+            <a href="https://www.facebook.com/PositiveThursdays/" target="_blank" class="icon icon-facebook"></a>
           </td>
         </tr>
         <tr>
@@ -97,7 +105,7 @@
             </a>
           </td>
           <td>
-            <a href="https://www.facebook.com/afrikoartradio/" class="icon icon-facebook"></a>
+            <a href="https://www.facebook.com/afrikoartradio/" target="_blank" class="icon icon-facebook"></a>
           </td>
         </tr>
         <tr>
@@ -112,8 +120,8 @@
             </a>
           </td>
           <td>
-            <a href="https://www.facebook.com/BigUpSession/" class="icon icon-facebook"></a>
-            <a href="https://twitter.com/bigupsession" class="icon icon-twitter"></a>
+            <a href="https://www.facebook.com/BigUpSession/" target="_blank" class="icon icon-facebook"></a>
+            <a href="https://twitter.com/bigupsession" target="_blank" class="icon icon-twitter"></a>
           </td>
         </tr>
         <tr>
@@ -128,7 +136,7 @@
             </a>
           </td>
           <td>
-            <a href="https://www.facebook.com/StrefaDread/" class="icon icon-facebook"></a>
+            <a href="https://www.facebook.com/StrefaDread/" target="_blank" class="icon icon-facebook"></a>
           </td>
         </tr>
       </tbody>
@@ -136,6 +144,8 @@
   </section>
 
   <footer>
+    <a href="#" class="open-modal" data-modal=".contact-form">Kontakt</a>
+    <span class="divider">|</span>
     <a href="https://github.com/KKrisu/soundsystemculture.pl">GitHub</a>
   </footer>
 
@@ -149,7 +159,7 @@
       <span class="icon-cross close-modal-icon"></span>
       Dzięki za dodanie wydarzenia!
       <br>
-      Niebawem ktoś z moderatorów wrzuci go do kalendarza.
+      Niebawem ktoś z moderatorów wrzuci je do kalendarza.
       <br>
       Bless!
     </div>
@@ -158,30 +168,29 @@
       <span class="icon-cross close-modal-icon"></span>
       <form>
         <div>
-          <label>Twój email:</label>
-          <input type="email" name="yourEmail" required>
+          <label>Twój email:<span class="required-asterisk">*</span></label>
+          <input type="email" name="mail" required>
         </div>
         <div>
           <label>Twoje imię:</label>
-          <input type="text" name="yourName">
+          <input type="text" name="name">
         </div>
         <div>
-          <label>Treść:</label>
+          <label>Treść:<span class="required-asterisk">*</span></label>
           <textarea name="body" required></textarea>
         </div>
         <div>
-          <button type="submit">Dodaj</button>
+          <button type="submit">
+            <span class="default-label">Wyślij</span>
+            <span class="loading-label">wysyłanie...</span>
+          </button>
         </div>
       </form>
     </div>
 
     <div class="modal contact-submit-success">
       <span class="icon-cross close-modal-icon"></span>
-      Dzięki za dodanie wydarzenia!
-      <br>
-      Niebawem ktoś z moderatorów wrzuci go do kalendarza.
-      <br>
-      Bless!
+      Wiadomość została wysłana do moderatorów.
     </div>
   <div>
 
