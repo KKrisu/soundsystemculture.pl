@@ -57,7 +57,6 @@
       dataType: 'json',
       data: data,
       success: function() {
-        $addEventForm.slideToggle();
         $form.find('input[type=text], textarea').val('');
         modalsManager.open('.contact-submit-success');
         $contactSubmitBtn.prop('disabled', false);

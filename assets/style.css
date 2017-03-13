@@ -147,6 +147,10 @@ header h1 {
   margin: 10px;
   font-size: 36px;
 }
+header .main-logo {
+  vertical-align: sub;
+  width: 40px;
+}
 footer {
   height: 60px;
   font-weight: 500;
